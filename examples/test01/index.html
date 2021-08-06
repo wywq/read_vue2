@@ -10,15 +10,24 @@
   <body>
     <div id="app">
       <p>{{msg}}</p>
+      <comp></comp>
     </div>
     <script src="../../dist/vue.js"></script>
     <script>
-      debugger;
+      // debugger;
+      Vue.component("comp", {
+        template: "<div>I am comp</div>",
+      });
       new Vue({
         el: "#app",
         data: {
           msg: "hello vue",
         },
+        //！ 当发生根组件合并的时候，会将全局注册组件合并到跟组件上，形成下述伪代码
+        // components: {
+        //   localComp,
+        //   globalComp,
+        // },
       });
     </script>
   </body>
