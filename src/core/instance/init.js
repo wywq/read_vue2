@@ -64,7 +64,7 @@ export function initMixin(Vue: Class<Component>) {
     initLifecycle(vm);
     /**
      * 初始化自定义事件，这里需要注意一点，所有我们在 <comp @click="handleClick" /> 上注册的事件，监听者不是父组件
-     * 而是子组件本身，也就是说事件的派发和监听者都是子组件本身，和父组件无关
+     * 而是子组件本身，也就是说事件的派发和监听者都是子组件本身，和父组件无关()
      */
     initEvents(vm);
     //! 解析组件的插槽信息，得到 vm.$slot，处理渲染函数，得到 vm.$createElement 方法，即 h 函数
